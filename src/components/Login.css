@@ -1,0 +1,109 @@
+/* Main container to center everything */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f7fa; /* Light background color */
+  box-shadow: 5px 5px 10px rgba(0, 128, 0, 0.4); 
+}
+
+/* Form container with a green moving border */
+.form-container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between form fields */
+  position: relative; /* To enable absolute positioning for the border */
+  animation: borderAnimation 3s linear infinite; /* Clockwise moving green border animation */
+  box-shadow: 5px 5px 10px rgba(0, 128, 0, 0.4); 
+}
+
+/* Creating a clockwise green border animation */
+@keyframes borderAnimation {
+  0% {
+    box-shadow: inset 0 0 0 0px #4CAF50; /* Initial state - no border */
+  }
+  25% {
+    box-shadow: inset 10px 0 0 0px #4CAF50, inset 0 10px 0 0px #4CAF50; /* Top and right border */
+  }
+  50% {
+    box-shadow: inset 10px 0 0 0px #4CAF50, inset 0 10px 0 0px #4CAF50, inset -10px 0 0 0px #4CAF50; /* Top, right, and bottom borders */
+  }
+  75% {
+    box-shadow: inset 10px 0 0 0px #4CAF50, inset 0 10px 0 0px #4CAF50, inset -10px 0 0 0px #4CAF50, inset 0 -10px 0 0px #4CAF50; /* Complete green border (clockwise) */
+  }
+  100% {
+    box-shadow: inset 0 0 0 0px #4CAF50; /* Back to initial state - no border */
+  }
+}
+
+/* Styling for the title */
+.form-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600; /* Bolder font */
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Styling for form inputs */
+.form-input {
+  padding: 12px;
+  margin: 8px 0;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 100%;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Styling for the button */
+.form-button {
+  padding: 12px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 18px;
+  font-weight: bold; /* Bolder font for the button */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 128, 0, 0.4); /* Green box shadow for button */
+}
+
+/* Hover effect for the button */
+.form-button:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+}
+
+/* Error message styling */
+/* Error message styling */
+.error-message {
+  background-color: #ffcccc; /* Light red background */
+  color: #ff0000; /* Red text */
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Space between the emoji and the text */
+}
+
+
+/* Fade-in animation for the form */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
