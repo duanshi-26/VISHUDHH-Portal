@@ -550,7 +550,6 @@ const ModernLandingPage = () => {
                 />
               ))}
             </div>
-
             {/* Dynamic Slide Info */}
             <AnimatePresence mode="wait">
               <motion.div
